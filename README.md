@@ -33,5 +33,5 @@ ExecStart=/usr/bin/docker run \
     --volume /data/cjdns:/etc/cjdns \
     --name cjdns \
     desertbit/cjdns
-ExecStop=/usr/bin/docker stop cjdns
+ExecStop=/usr/bin/docker kill cjdns
 ```
