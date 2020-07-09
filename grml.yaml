@@ -1,0 +1,13 @@
+env:
+    DOCKERREPO: desertbit/cjdns
+    DOCKERTAG:  latest
+  
+commands:
+    build:
+        help: build the container
+        exec: |
+            docker build --no-cache . -t ${DOCKERREPO}:${DOCKERTAG}
+    push:
+        help: push the container
+        exec: |
+            docker push ${DOCKERREPO}:${DOCKERTAG}
