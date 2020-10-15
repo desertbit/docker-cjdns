@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y nodejs git build-essential python2.7
 
 # Install & build.
-RUN export CJDNSTAG="cjdns-v20.7" && \
+RUN export CJDNSTAG="cjdns-v21" && \
     git clone https://github.com/cjdelisle/cjdns.git /cjdns && \
     cd /cjdns && \
     git checkout "${CJDNSTAG}" && \
