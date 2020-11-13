@@ -22,7 +22,7 @@ TimeoutStartSec=0
 Restart=always
 ExecStartPre=-/usr/bin/docker kill cjdns
 ExecStartPre=-/usr/bin/docker rm cjdns
-ExecStartPre=/usr/bin/docker pull desertbit/cjdns
+ExecStartPre=-/usr/bin/docker pull desertbit/cjdns
 ExecStart=/usr/bin/docker run \
     --volume /data/cjdns:/etc/cjdns \
     --name cjdns \
