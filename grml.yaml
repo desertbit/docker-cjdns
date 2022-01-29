@@ -1,3 +1,6 @@
+version: 1
+project: docker-cjdns
+
 env:
     DOCKERREPO: desertbit/cjdns
     DOCKERTAG:  latest
