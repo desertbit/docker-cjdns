@@ -4,15 +4,22 @@ MAINTAINER Roland Singer, roland.singer@desertbit.com
 
 # Install dependencies.
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update && \
-    apt-get install -y nodejs git build-essential python3 rustc cargo
+    apt update -y && \
+    apt upgrade -y && \
+    apt install -y \
+        build-essential \
+        nodejs \
+        git \
+        python3 \
+        rustc \
+        cargo
 
 # Install & build.
 RUN export CJDNSTAG="cjdns-v22" && \
     git clone https://github.com/cjdelisle/cjdns.git /cjdns && \
     cd /cjdns && \
     git checkout "${CJDNSTAG}" && \
-    ./do
+    RUSTFLAGS='-C target-cpu=x86-64 -C target-feature=+sse3,+avx' CROSS="true" ./cross-do
 
 # Second Stage.
 FROM debian:stable-slim
