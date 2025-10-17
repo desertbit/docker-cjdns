@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if ! [ -s /etc/cjdns/cjdroute.conf ]; then
   echo -n "Generate /etc/cjdns/cjdroute.conf... "
